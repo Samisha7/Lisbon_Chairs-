@@ -11,7 +11,7 @@ const products = [
     name: 'The Worker Bee',
     price: 750,
     category: 'work',
-    image: 'chair-2.jpg',
+    image: 'chair-4.jpg',
     badge: 'Premium',
     rating: 5.0,
     features: ['Work', 'Comfortable for 8h', 'Vegan leather', 'Weighs 22 kg']
@@ -20,7 +20,7 @@ const products = [
     name: 'The Chair 4/2',
     price: 1250,
     category: 'luxury',
-    image: 'chair-3.jpg',
+    image: 'chair-5.jpg',
     badge: 'Luxury',
     rating: 4.8,
     features: ['Leisure and relaxing', 'Comfortable all day!', 'Organic cotton', 'Weighs 80 kg']
@@ -29,7 +29,7 @@ const products = [
     name: 'The Executive Pro',
     price: 950,
     category: 'work',
-    image: 'chair-3.jpg',
+    image: 'chair-6.jpg',
     badge: 'Ergonomic',
     rating: 4.9,
     features: ['Executive office', 'Lumbar support', 'Adjustable height', 'Weighs 25 kg']
