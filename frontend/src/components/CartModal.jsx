@@ -8,24 +8,24 @@ const CartModal = () => {
   if (!isCartOpen) return null;
 
   const handleCheckout = async () => {
-    if (cart.length === 0) {
-      alert('Your cart is empty!');
-      return;
-    }
+  if (cart.length === 0) {
+    alert('Your cart is empty!');
+    return;
+  }
 
-    try {
-      const res = await axios.post('http://localhost:5000/api/orders', {
-        items: cart,
-        total: cartTotal
-      });
-      alert('Order placed successfully! Order ID: ' + res.data._id);
-      clearCart();
-      setIsCartOpen(false);
-    } catch (err) {
-      console.error('Failed to place order', err);
-      alert('Failed to place order. Please try again.');
-    }
-  };
+  try {
+    const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/orders`, {
+      items: cart,
+      total: cartTotal
+    });
+    alert('Order placed successfully! Order ID: ' + res.data._id);
+    clearCart();
+    setIsCartOpen(false);
+  } catch (err) {
+    console.error('Failed to place order', err);
+    alert('Failed to place order. Please try again.');
+  }
+};
 
   return (
     <div id="cart-modal" className="modal" style={{ display: 'block' }}>
