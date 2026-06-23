@@ -12,8 +12,14 @@ router.post('/', async (req, res) => {
       return res.status(400).json({ message: 'No order items' });
     }
 
+    const sanitizedItems = (items || []).map(({ name, price, quantity }) => ({
+      name,
+      price,
+      quantity
+    }));
+
     const order = new Order({
-      items,
+      items: sanitizedItems,
       total
     });
 

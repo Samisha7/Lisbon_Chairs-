@@ -3,7 +3,7 @@ import { useCart } from '../context/CartContext';
 import axios from 'axios';
 
 const CartModal = () => {
-  const { cart, removeFromCart, updateQuantity, cartTotal, isCartOpen, setIsCartOpen } = useCart();
+  const { cart, removeFromCart, updateQuantity, clearCart, cartTotal, isCartOpen, setIsCartOpen } = useCart();
 
   if (!isCartOpen) return null;
 
@@ -19,8 +19,8 @@ const CartModal = () => {
         total: cartTotal
       });
       alert('Order placed successfully! Order ID: ' + res.data._id);
+      clearCart();
       setIsCartOpen(false);
-      // In a real app, you would also clear the cart here
     } catch (err) {
       console.error('Failed to place order', err);
       alert('Failed to place order. Please try again.');

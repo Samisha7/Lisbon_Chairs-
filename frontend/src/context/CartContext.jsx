@@ -26,6 +26,10 @@ export const CartProvider = ({ children }) => {
     setCart((prevCart) => prevCart.filter((item) => item.name !== name));
   };
 
+  const clearCart = () => {
+    setCart([]);
+  };
+
   const updateQuantity = (name, change) => {
     setCart((prevCart) =>
       prevCart.map((item) => {
@@ -47,6 +51,7 @@ export const CartProvider = ({ children }) => {
         cart,
         addToCart,
         removeFromCart,
+        clearCart,
         updateQuantity,
         cartTotal,
         cartCount,
